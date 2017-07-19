@@ -14,15 +14,15 @@ export default class Template extends React.Component {
     return (
       <div>
         <Helmet
-          title="Gatsby Default Starter"
+          title='Nate Taylor'
           meta={[
-            { name: "description", content: "Sample" },
-            { name: "keywords", content: "sample, something" },
+            { name: 'description', content: 'Website of Nate A Taylor' },
+            { name: 'keywords', content: 'homepage, blog, programming' },
           ]}
         />
         <div
           style={{
-            background: `rebeccapurple`,
+            background: '#04010b',
             marginBottom: `1.45rem`,
           }}
         >
@@ -37,11 +37,11 @@ export default class Template extends React.Component {
               <Link
                 to="/"
                 style={{
-                  color: "white",
+                  color: '#577f8e',
                   textDecoration: "none",
                 }}
               >
-                Gatsby
+               Nate Taylor
               </Link>
             </h1>
           </div>
