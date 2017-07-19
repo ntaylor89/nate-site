@@ -17,7 +17,9 @@
     "gatsby-source-filesystem": "^1.0.1",
     "gatsby-transformer-remark": "^1.1.0",
     "gatsby-transformer-sharp": "^1.0.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "tachyons": "^4.7.4",
+    "tachyons-cli": "^1.0.11"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"
@@ -32,6 +34,9 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"pages/*.js\" \"utils/*.js\" \"wrappers/*.js\" \"html.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "css": "tachyons src/css/app.css > src/index.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "npm run css",
+    "predevelop": "npm run css"
   }
 }
