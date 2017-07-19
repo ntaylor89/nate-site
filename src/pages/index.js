@@ -12,7 +12,7 @@ export default class Index extends React.Component {
           It's still under construction.
           Try again later.
         </p>
-        <Link to="/page-2/">Next</Link>
+        <Link to="/hello-world/">Next</Link>
       </div>
     )
   }
