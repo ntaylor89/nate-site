@@ -27,7 +27,7 @@ function NavBar () {
     <nav className='db dtc-ns v-mid w-100 tl tr-ns mt2 mt0-ns'>
       <NavLink title='Contact' href='/contact/' />
       <NavLink title='Projects' href='/projects/' />
-      <NavLink title='Writing' href='/writing/' />
+      <NavLink title='Writing' href='/posts/' />
     </nav>
   )
 }

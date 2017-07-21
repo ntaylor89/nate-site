@@ -22,20 +22,23 @@ export default function PostTemplate (props) {
 }
 
 export const pageQuery = graphql`
-  query PostByPath($path: String!) {
+  query PostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       frontmatter {
         title
-        date
+        summary
+        tags
+        date(formatString: "MMMM, DD, YYYY")
       }
     }
   }
 `
+

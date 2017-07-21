@@ -1,20 +1,43 @@
+const _ = require('lodash')
 const path = require('path')
+
+
+function getPostSlug(node) {
+  let date, title
+
+  switch (node.internal.type) {
+    case 'MarkdownRemark':
+      ({ date, title } = node.frontmatter)
+      break
+    case 'File':
+      const filePath = path.parse(node.absolutePath)
+      [ date, title ] = filePath.dir.split('---')
+      break
+  }
+  slugDate = date.replace(/-/g, '/')
+  slugTitle = _.kebabCase(title.toLowerCase())
+  return `/posts/${slugDate}/${slugTitle}/`
+}
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('src/layouts/post.js')
+    const postTemplate = path.resolve('src/templates/post.js')
+    const tagTemplate = path.resolve('src/templates/tag.js')
 
     // Query for markdown nodes
     resolve(
       graphql(
         `{
-          allMarkdownRemark(limit: 1000) {
+          allMarkdownRemark(limit: 1000, filter: { frontmatter: { draft: { ne: true }}}) {
             edges {
               node {
+                fields {
+                  slug
+                }
                 frontmatter {
-                  path
+                  tags
                 }
               }
             }
@@ -26,18 +49,54 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors)
         }
 
-        // Create post pages
+        let tags = []
         result.data.allMarkdownRemark.edges.forEach(edge => {
+          const postPath = `/posts/${edge.node.fields.slug}/`
           createPage({
-            path: edge.node.frontmatter.path,
+            path: edge.node.fields.slug,
             component: postTemplate,
             context: {
-              path: edge.node.frontmatter.path
+              slug: edge.node.fields.slug,
+
             }
+          })
+
+          // Add posts's tags to list of tags
+          if (_.get(edge, 'node.frontmatter.tags')) {
+            tags = tags.concat(edge.node.frontmatter.tags)
+          }
+        })
+
+        // Create tag pages
+        tags = _.uniq(tags)
+        tags.forEach(tag => {
+          const tagPath = `tags/${_.kebabCase(tag)}/`
+          createPage({
+            path: tagPath,
+            component: tagTemplate,
+            context: { tag }
           })
         })
       })
     )
   })
+}
+
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators
+
+  if (node.internal.type === 'MarkdownRemark') {
+    const slug = getPostSlug(node)
+    createNodeField({
+      node, name: 'slug', value: slug
+    })
+
+    if (node.frontmatter.tags) {
+      const tagSlugs = node.frontmatter.tags.map(
+        tag => `/tags/${_.kebabCase(tag)}/`
+      )
+      createNodeField({ node, name: 'tagSlugs', value: tagSlugs })
+    }
+  }
 }
 

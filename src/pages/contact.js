@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function ContactLink (props) {
   return (
     <dl className='lh-title mv2'>

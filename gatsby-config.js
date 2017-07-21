@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Nate A Taylor',
-    author: 'Nate A Taylor'
+    author: 'Nate A Taylor',
+    description: 'Website of Nate A Taylor'
   },
   plugins: [
     {
