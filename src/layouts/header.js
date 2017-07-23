@@ -34,8 +34,8 @@ function NavBar () {
 
 export default function Header () {
   return (
-    <header className='w-100 pa3 ph5-ns bg-white'>
-      <div className='db dt-ns mw9 center w-100'>
+    <header className='bg-white measure-wide mw100 center pt5 pb2'>
+      <div className='db dt-ns mw9 center w-100 garamond'>
         <Title />
         <NavBar />
       </div>

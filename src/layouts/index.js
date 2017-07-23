@@ -20,8 +20,8 @@ function Template (props) {
         ]}
       />
       <Header />
-      <main className='bg-white bt b--black-10'>
-        <div className='ph3 ph5-ns pb5'>
+      <main className='bg-white measure-wide mw100 center pt4 pb5'>
+        <div className='lh-copy f4 baskerville'>
           {props.children()}
         </div>
       </main>

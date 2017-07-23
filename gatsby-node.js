@@ -2,21 +2,16 @@ const _ = require('lodash')
 const path = require('path')
 
 
-function getPostSlug(node) {
-  let date, title
+function getPostSlug (node) {
+  let {date, title} = node.frontmatter
 
-  switch (node.internal.type) {
-    case 'MarkdownRemark':
-      ({ date, title } = node.frontmatter)
-      break
-    case 'File':
-      const filePath = path.parse(node.absolutePath)
-      [ date, title ] = filePath.dir.split('---')
-      break
+  if (title) {
+    title = _.kebabCase(title.toLowerCase())
+    date = date ? `${date.replace(/-/g, '/')}/` : ''
+    return `/posts/${date}${title}/`
+  } else {
+    return path.parse(node.fileAbsolutePath).name
   }
-  slugDate = date.replace(/-/g, '/')
-  slugTitle = _.kebabCase(title.toLowerCase())
-  return `/posts/${slugDate}/${slugTitle}/`
 }
 
 exports.createPages = ({ graphql, boundActionCreators }) => {

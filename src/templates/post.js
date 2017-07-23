@@ -11,11 +11,10 @@ export default function PostTemplate (props) {
     <div>
       <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
 
-      <h1>{post.frontmatter.title}</h1>
+      <h1 className='garamond'>{post.frontmatter.title}</h1>
 
       <p>{post.frontmatter.data}</p>
       <article
-        className='lh-copy f4'
         dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   )

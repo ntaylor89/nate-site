@@ -2,11 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 function PostSlat (props) {
+  // TODO make query filter posts without title
+  // instead of short circuiting here
+  if (!props.title) return null
+
   return (
-    <article className='pv4 bt bb b--black-10 ph3 ph0-1'>
+    <article className='pv3'>
       <div className='flex flex-column flex-row-ns'>
         <div className='w-100 w-60-ns pr3-ns order-2 order-1-ns'>
-          <h1 className='f3 mt0 lh-title'>
+          <h1 className='f3 mt0 lh-title garamond'>
             <Link to={props.slug}>{props.title}</Link>
           </h1>
           <p className='f5 f4-l lh-copy'>
@@ -22,8 +26,7 @@ export default function PostIndex (props) {
   const posts = props.data.allMarkdownRemark.edges
 
   return (
-    <section className='mw7 center'>
-      <h2 className='ph3 ph0-1'>Writing</h2>
+    <section>
       {posts.map(post => (
         <PostSlat
           title={post.node.frontmatter.title}
