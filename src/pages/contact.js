@@ -1,4 +1,5 @@
 import React from 'react'
+import photo from '../me.jpeg'
 
 function ContactLink (props) {
   return (
@@ -16,6 +17,8 @@ function ContactLink (props) {
 export default function Contact () {
   return (
     <div>
+
+      <img src={photo} title='Photo of Nate Taylor' alt='Photo of Nate Taylor' />
       <p>Hit me up at one the following places:</p>
 
       <ContactLink
