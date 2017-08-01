@@ -10,6 +10,7 @@ export default function ProjectIndex (props) {
           title={project.title}
           summary={project.description}
           url={project.url}
+          static={true}
           subTitle={project.url}
         />
       ))}
