@@ -1,8 +1,8 @@
 ---
 title: "Building a Blog with Gatsby JS"
-date: "2017-04-21"
+date: "2017-07-21"
 author: "Nate Taylor"
-summary: "How to build a personal site with Gatsby"
+summary: "How to build a personal site with Gatsby."
 draft: false
 tags:
 - JavaScript
@@ -58,7 +58,5 @@ This will create a new react project with the following scripts defined in `pack
 
 Running `npm develop` will serve the app at localhost:8000.
 
-![Default gatsby index page](./default-gatsby-index.png')
-
-That was easy! In the next post, we'll set up markdown support.
+![Default gatsby index page](./gatsby-index.png)
 

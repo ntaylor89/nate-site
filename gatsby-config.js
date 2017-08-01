@@ -9,34 +9,33 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages/`
+        path: `${__dirname}/src/pages`
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts/`
-      }
-    },
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+              wrapperStyle: 'z-index: 0; margin-top: 1rem; margin-bottom: 1rem;'
+            }
+          },
+          {
+           resolve: `gatsby-remark-responsive-iframe`,
+           options: { wrapperStyle: `margin-bottom 1rem` }
+          },
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-prismjs`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: { maxWidth: 740 }
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: { wrapperStyle: `margin-bottom 1.0725rem` }
-          }
+          `gatsby-remark-prismjs`
         ]
       }
     }
