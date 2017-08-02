@@ -25,7 +25,7 @@ Unfortunately, since this is a somewhat new project, there are still some holes.
 ## Prerequisites
 
 You'll need
-- Familiarity with ES6 JavaScript
+- Familiarity with ES6 JavaScript and React
 - [Node](https://nodejs.org/en/) and NPM installed
 
 ## Initializing the Project

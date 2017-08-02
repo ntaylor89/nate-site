@@ -29,8 +29,8 @@ module.exports = {
             }
           },
           {
-           resolve: `gatsby-remark-responsive-iframe`,
-           options: { wrapperStyle: `margin-bottom 1rem` }
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: { wrapperStyle: `margin-bottom 1rem` }
           },
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-copy-linked-files`,
@@ -39,5 +39,5 @@ module.exports = {
         ]
       }
     }
-  ],
+  ]
 }

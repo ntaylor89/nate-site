@@ -4,7 +4,7 @@ import photo from '../me.jpeg'
 function ContactLink (props) {
   return (
     <dl className='lh-title mv2'>
-      <dt className='dib b pr2 garamond'>{props.type}:</dt>
+      <dt className='dib b pr2 black-80'>{props.type}:</dt>
       <dd className='dib ml0'>
         <a href={props.url}>
           {props.urlText}
@@ -39,4 +39,3 @@ export default function Contact () {
     </div>
   )
 }
-

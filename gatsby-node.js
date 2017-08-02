@@ -1,7 +1,6 @@
 const _ = require('lodash')
 const path = require('path')
 
-
 function getPostSlug (node) {
   let {date, title} = node.frontmatter
 
@@ -46,13 +45,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         let tags = []
         result.data.allMarkdownRemark.edges.forEach(edge => {
-          const postPath = `/posts/${edge.node.fields.slug}/`
           createPage({
             path: edge.node.fields.slug,
             component: postTemplate,
             context: {
-              slug: edge.node.fields.slug,
-
+              slug: edge.node.fields.slug
             }
           })
 
@@ -94,4 +91,3 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     }
   }
 }
-

@@ -11,8 +11,8 @@ export default function PostTemplate (props) {
     <div>
       <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
 
-      <h1 className='garamond mb0'>{post.frontmatter.title}</h1>
-      <span className='garamond f5 mid-gray'>{post.frontmatter.date}</span>
+      <h1 className='mb0'>{post.frontmatter.title}</h1>
+      <span className='f5 mid-gray'>{post.frontmatter.date}</span>
 
       <p>{post.frontmatter.data}</p>
       <article
@@ -41,4 +41,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
