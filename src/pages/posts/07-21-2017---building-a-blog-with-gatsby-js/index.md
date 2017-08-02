@@ -32,14 +32,14 @@ You'll need
 
 First install Gatsby
 
-```sh
+```bash
 npm install -g gatsby
 
 ```
 
 Then use it to create a new project
 
-```sh
+```bash
 # replace "site-name" with the name of the
 # directory you want the project to live in
 gatsby new site-name
@@ -68,14 +68,14 @@ development mode. You should see
 "Development mode" will hotload any changes you make,
 except for changes made to config files (`package.json`, `gatsby-config.js`, or `gatsby-node.js`).
 
-### Adding a New Page
+## Adding a New Page
 
-To create a new page on our site, create a new `js` file in the `src/pages` directory,
+To create a new page on the site, create a new `js` file in the `src/pages` directory,
 and export a React component from that file. Gatsby will create a new route based on the name of the file, and render the component based on the layout defined in `src/layouts/index.js`
 
 To see an example, save the following code into `src/pages/my-new-page.js`:
 
-```javascript
+```jsx
 import React from 'react'
 
 export default function MyNewPage () {
@@ -90,5 +90,74 @@ export default function MyNewPage () {
 }
 ```
 
-Gatsby will create a new route based on the file name. That means you can see our new page
-by visiting `localhost:8000/my-new-page`
+We can see this page by visiting `localhost:8000/my-new-page`.
+
+![New page](./new-page.png)
+
+### Linking to a Different Page
+
+If you need to link to a different page, use the component `gatsby-link`.
+
+```jsx
+import React from 'react'
+import Link from 'gatsby-link'
+
+export default function MyNewPage () {
+  return (
+    <div>
+      <h1>My New Page</h1>
+      <p>
+        I just added a new page to my site. Cool!<br />
+        <Link to="/">Back to the index</Link>
+      <p>
+    </div>
+  )
+}
+```
+
+## Adjusting the Layout
+
+The file `src/layouts/index.js` contains the default layout. Anytime component exported from the `src/pages` directory gets passed into the layout compont as `children` props.
+
+### Changing CSS
+
+The default stylesheet lives in `src/layouts/index.css`. Any CSS added here will automatically be available in your application.
+
+### Adding Resources
+
+Because Gatsby is built with Webpack, you can fonts, images, and other resources as if they were a regular file import.
+
+```jsx
+import React from 'react'
+
+// Importing tells webpack to include this resource.
+// The import result will be a string respresenting the path
+// to the resource
+import logo from './logo.png'
+
+function Header () {
+  return <img src={logo} alt='Logo' />
+}
+```
+
+## Building the Site
+
+Once you're ready to deploy the site, run `yarn build`. The result of the build will be
+placed in the `public` folder. Deploy the contents of this folder to a host of your
+choice.
+
+### Testing the Build
+
+If you'd like to test your build before deploying, you can run `gatsby serve`.
+
+I like to add the command as a npm script to `package.json`
+
+```js
+"scripts": {
+  "build": "gatsby build",
+  "develop": "gatsby develop",
+  "serve": "gatsby serve"
+}
+```
+
+That should get you started. In our next post, we'll add the ability to create posts from markdown.

@@ -25,7 +25,7 @@ module.exports = {
             options: {
               maxWidth: 590,
               linkImagesToOriginal: false,
-              wrapperStyle: 'z-index: 0; margin-top: 1rem; margin-bottom: 1rem;'
+              wrapperStyle: 'z-index: 0; margin-top: 1.25rem; margin-bottom: 1.25rem;'
             }
           },
           {
