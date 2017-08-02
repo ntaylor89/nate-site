@@ -6,7 +6,7 @@ export default function Index () {
   return (
     <div>
       <p>Hello, my name is Nate Taylor.</p>
-      <p>I'm a web develper living in Boise, Idaho</p>
+      <p>I'm a web developer living in Boise, Idaho.</p>
       <p>
         I'm currently paid to write Ruby and JavaScript,
         but I always love learning and working with new tools/technologies.
@@ -25,4 +25,3 @@ export default function Index () {
     </div>
   )
 }
-

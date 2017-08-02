@@ -3,8 +3,8 @@ import Link from 'gatsby-link'
 
 function Title () {
   return (
-    <div className='db dtc-ns v-mid tl w-50'>
-      <Link to='/' className='dib f5 f4-ns fw6 mt0 mb1 link black'>
+    <div className='db dtc-ns v-mid tl w-50 sans-serif'>
+      <Link to='/' className='dib f3 f3-ns fw6 mt0 mb1 link black'>
         Nate Taylor
     </Link>
     </div>
@@ -16,7 +16,7 @@ function NavLink ({title, href, ...other}) {
       <Link {...other}
         title={title}
         to={href}
-        className='f6 fw6 hover-blue link black mr2 mr3-m mr4-l dib'>
+        className='f5 fw6 hover-blue link black mr2 mr3-m mr3-l dib'>
           {title}
       </Link>
   )
@@ -24,7 +24,7 @@ function NavLink ({title, href, ...other}) {
 
 function NavBar () {
   return (
-    <nav className='db dtc-ns v-mid w-100 tl tr-ns mt2 mt0-ns'>
+    <nav className='db dtc-ns v-mid w-100 tl tr-ns mt2 mt0-ns sans-serif'>
       <NavLink title='Contact' href='/contact/' />
       <NavLink title='Projects' href='/projects/' />
       <NavLink title='Writing' href='/posts/' />
@@ -42,4 +42,3 @@ export default function Header () {
     </header>
   )
 }
-

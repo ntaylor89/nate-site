@@ -8,6 +8,7 @@ import Footer from './footer'
 
 import '../index.css'
 import '../css/prism-github.css'
+//import 'prismjs/themes/prism-solarizedlight.css'
 
 function Template (props) {
   return (
@@ -21,7 +22,7 @@ function Template (props) {
       />
       <Header />
       <main className='bg-white measure-wide mw100 center pt4 pb5 ph3'>
-        <div className='lh-copy f4 baskerville'>
+        <div className='lh-copy f4 sans-serif black-90'>
           {props.children()}
         </div>
       </main>
@@ -31,8 +32,7 @@ function Template (props) {
 }
 
 Template.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.func
 }
 
 export default Template
-
