@@ -1,5 +1,5 @@
 ---
-title: "Building a Blog with Gatsby JS Pt 2"
+title: "Building a Blog with Gatsby Pt 2"
 date: "2017-08-02"
 author: "Nate Taylor"
 summary: "Setup Gatsby to automatically turn markdown files into blog posts"
