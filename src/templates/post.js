@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 
 export default function PostTemplate (props) {
@@ -14,7 +13,6 @@ export default function PostTemplate (props) {
       <h1 className='mb0'>{post.frontmatter.title}</h1>
       <span className='f5 mid-gray'>{post.frontmatter.date}</span>
 
-      <p>{post.frontmatter.data}</p>
       <article
         dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
@@ -36,7 +34,7 @@ export const pageQuery = graphql`
         title
         summary
         tags
-        date(formatString: "MMMM, DD, YYYY")
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

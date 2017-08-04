@@ -22,6 +22,8 @@ export default function Index () {
         I love automating tasks big and small. I love the *nix command line.
         And, like most Boiseans, I love beer, beards, and bicycles.
       </p>
+
+      <div className='measure-wide tc center'>🤖</div>
     </div>
   )
 }
