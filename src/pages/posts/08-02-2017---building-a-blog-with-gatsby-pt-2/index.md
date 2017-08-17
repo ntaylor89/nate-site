@@ -11,13 +11,12 @@ tags:
 - Tutorial
 ---
 
-If you want to build a personal blog with modern web technologies, [Gatsby](https://www.gatsbyjs.org/) is a great choice. But if you're coming
-from tools like Jeckyll, you'll find that some features don't work out of the box.
+If you want to build a personal blog with modern web technologies, [Gatsby](https://www.gatsbyjs.org/) is a great choice. But if you're coming from tools like Jeckyll, you'll find that some features don't
+work out of the box.
 
 One such feature is markdown support. In this post, we will:
 
-- Add basic markdown support to Gatsby, allowing you to import a markdown file into any component, and
-  set it as inner HTML
+- Add basic markdown support to Gatsby, allowing you to import a markdown file into any component, and set it as inner HTML.
 - Automatically create blog posts from markdown files in a specific directory.
 
 If you don't have a Gatsby project, set one up with `gatsby new my-blog` and follow along.
@@ -25,7 +24,7 @@ If you don't have a Gatsby project, set one up with `gatsby new my-blog` and fol
 ## Adding The Plugins We Need
 
 Gatsby uses a [plugin system](https://www.gatsbyjs.org/docs/plugins/) to add support
-for new features. But before we add the plugins we need, we need to know how Gatsby's data layer
+for new features. But before we add plugins, we need to know how Gatsby's data layer
 works, and what these plugins actually do.
 
 ### Understanding Gatsby's Data Layer
@@ -33,8 +32,7 @@ works, and what these plugins actually do.
 Gatsby has a modular data layer extendable through plugins. Here's how it works:
 
 - Gatsby searches it's known sources for data, and adds a `gatsby-node` to a tree data structure.
-- If the data in the node is a data-type Gatsby understands, it will parse it and create a
-  child node.
+- If the data in the node is a data-type Gatsby understands, it will parse it and create a child node.
 - Gatsby allows you to query the `gatsby-node` tree with GraphQL.
 - In a component, you export a GraphQL query to specify what data the component needs. The data you query
   is available to your component as a prop.
