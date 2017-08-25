@@ -2,7 +2,7 @@
 title: "Building a Blog with Gatsby Pt 2"
 date: "2017-08-02"
 author: "Nate Taylor"
-summary: "Setup Gatsby to automatically turn markdown files into blog posts"
+summary: "Setup Gatsby to automatically turn markdown files into blog posts."
 draft: false
 tags:
 - Gatsby

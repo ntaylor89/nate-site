@@ -23,6 +23,9 @@
     "tachyons-cli": "^1.0.11"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-env": "^1.6.0",
     "gh-pages": "^0.12.0"
   },
   "keywords": [
