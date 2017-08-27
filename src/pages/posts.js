@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Slat from '../layouts/slat'
 
 export default function PostIndex (props) {
@@ -49,4 +48,3 @@ export const pageQuery = graphql`
     }
   }
 `
-

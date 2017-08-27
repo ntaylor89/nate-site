@@ -2,7 +2,8 @@ Nathan A Taylor
 ============
 Boise, Idaho <br />
 nathantaylor89@gmail.com <br />
-[https://www.linkedin.com/in/nate-a-taylor](https://www.linkedin.com/in/nate-a-taylor/) <br />
+[nathanataylor.com](http://nathanataylor.com) <br />
+[linkedin.com/in/nate-a-taylor](https://www.linkedin.com/in/nate-a-taylor/) <br />
 [github.com/ntaylor89](https://github.com/ntaylor89)
 
 
@@ -81,12 +82,5 @@ Ember, Postgres, SQL, Vagrant, JSON, AJAX, TDD, Scrum
 References
 ---------------
 
-*Doug Wiegley* (Former Manager, Developer)<br/>
-doug@wiegley.com<br/>
-
-*Nick Bender* (Former Manager, Developer)<br/>
-nickbender@gmail.com
-
-*John Otander* (Software Developer)<br/>
-johnotander@gmail.com
+Available upon request. Please email [nathantaylor89@gmail.com](mailto:nathantaylor89@gmail.com).
 

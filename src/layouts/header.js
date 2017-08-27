@@ -13,12 +13,12 @@ function Title () {
 
 function NavLink ({title, href, ...other}) {
   return (
-      <Link {...other}
-        title={title}
-        to={href}
-        className='f5 fw6 hover-blue link black mr2 mr3-m mr3-l dib'>
-          {title}
-      </Link>
+    <Link {...other}
+      title={title}
+      to={href}
+      className='f6 fw6 hover-blue link black-80 mr2 mr3-m mr3-l dib ttu'>
+      {title}
+    </Link>
   )
 }
 

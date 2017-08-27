@@ -1,5 +1,5 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import './index.css'
 import './css/prism-github.css'
@@ -19,13 +19,13 @@ export default class HTML extends React.Component {
 
 
     return (
-      <html lang="en">
+      <html lang='en'>
         <head>
-          <meta charSet="utf-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta charSet='utf-8' />
+          <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
           <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
+            name='viewport'
+            content='width=device-width, initial-scale=1.0'
           />
           {css}
 
@@ -33,7 +33,7 @@ export default class HTML extends React.Component {
         </head>
         <body>
           <div
-            id="___gatsby"
+            id='___gatsby'
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import kebabCase from 'lodash/kebabCase'
 
-function tagPath(tagName) {
+function tagPath (tagName) {
   return `/tags/${kebabCase(tagName)}/`
 }
 
@@ -47,4 +47,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
