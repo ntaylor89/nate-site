@@ -1,26 +1,22 @@
 import React from 'react'
 import photo from './me.jpeg'
+import resume from '../../data/resume.pdf'
 
 function ContactLink (props) {
   return (
-    <dl className='lh-title mv2'>
-      <dt className='dib b pr2 black-80'>{props.type}:</dt>
-      <dd className='dib ml0'>
-        <a href={props.url}>
-          {props.urlText}
-        </a>
-      </dd>
-    </dl>
+    <a href={props.url} className='fw6 dib pa2 black link hover-blue'>
+      {props.type}
+    </a>
   )
 }
 
 export default function Contact () {
   return (
-    <div>
-      <div className='pa4 tc'>
-        <img src={photo} className='br-100 ba dib' title='Photo of Nate Taylor' alt='Photo of Nate Taylor' />
-
-        <p>Hit me up at one the following places:</p>
+    <div className='tc'>
+      <img src={photo} className='br-100 ba dib' title='Photo of Nate Taylor' alt='Photo of Nate Taylor' />
+      <div className='dib center'>
+        <p>Click <a href={resume} className='link b black hover-blue'>here</a> to see my resume. </p>
+        <p>If you'd like to chat, hit me up at one the following places:</p>
 
         <ContactLink
           type='Email'
@@ -36,6 +32,11 @@ export default function Contact () {
           type='LinkedIn'
           url='https://linkedin.com/in/nate-a-taylor/'
           urlText='linkedin.com/in/nateataylor'
+        />
+        <ContactLink
+          type='Twitter'
+          url='https://twitter.com/Nately89/'
+          urlText='twitter.com/Nately89'
         />
       </div>
     </div>

@@ -11,12 +11,15 @@ function Title () {
   )
 }
 
-function NavLink ({title, href, ...other}) {
+function NavLink ({title, href, last, ...other}) {
+  let styles = 'f6 fw6 hover-blue link black-80 dib ttu'
+  if (!last) styles = styles.concat(' mr2 mr3-m mr3-l')
+
   return (
     <Link {...other}
       title={title}
       to={href}
-      className='f6 fw6 hover-blue link black-80 mr2 mr3-m mr3-l dib ttu'>
+      className={styles}>
       {title}
     </Link>
   )
@@ -27,7 +30,7 @@ function NavBar () {
     <nav className='db dtc-ns v-mid w-100 tl tr-ns mt2 mt0-ns sans-serif'>
       <NavLink title='Contact' href='/contact/' />
       <NavLink title='Projects' href='/projects/' />
-      <NavLink title='Writing' href='/posts/' />
+      <NavLink title='Writing' href='/posts/' last />
     </nav>
   )
 }

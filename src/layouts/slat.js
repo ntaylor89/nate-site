@@ -4,9 +4,10 @@ import Link from 'gatsby-link'
 export default function Slat (props) {
   if (!props.title) return null
 
+  const linkStyle = 'black link hover-blue'
   const link = props.static
-    ? <a href={props.url}>{props.title}</a>
-    : <Link to={props.url}>{props.title}</Link>
+    ? <a href={props.url} className={linkStyle}>{props.title}</a>
+    : <Link to={props.url} className={linkStyle}>{props.title}</Link>
 
   return (
     <article className='pv3'>
